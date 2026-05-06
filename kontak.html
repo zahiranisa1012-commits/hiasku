@@ -1,0 +1,26 @@
+<section class="container">
+<h1>Kontak</h1>
+
+<p>📱 Admin: 0812-3456-7890</p>
+<p>📧 Email: greenleaf@gmail.com</p>
+
+<h3>Form Pembeli</h3>
+<form onsubmit="save()">
+<input type="text" id="nama" placeholder="Nama" required><br><br>
+<input type="email" id="email" placeholder="Email" required><br><br>
+
+<button type="submit">Kirim</button>
+</form>
+</section>
+
+<script>
+function save(){
+let user={
+nama:document.getElementById("nama").value,
+email:document.getElementById("email").value
+};
+localStorage.setItem("user",JSON.stringify(user));
+window.location="hasil.html";
+return false;
+}
+</script>
