@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Produk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<h2>GreenLeaf 🌿</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="produk.html">Produk</a></li>
+<li><a href="keranjang.html">🛒</a></li>
+<li><a href="kontak.html">Kontak</a></li>
+</ul>
+</nav>
+
+<section class="container">
+<h1>Produk Tanaman</h1>
+
+<div class="produk">
+<img src="https://images.unsplash.com/photo-1598887142487-4a2b3d0c3b77">
+<h3>Monstera</h3>
+<p>Tanaman daun lebar.</p>
+<p>Rp 80000</p>
+<input type="number" id="q1" value="1" min="1">
+<button onclick="add('Monstera',80000,'q1')">Beli</button>
+</div>
+
+<div class="produk">
+<img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb">
+<h3>Kaktus Mini</h3>
+<p>Mudah dirawat.</p>
+<p>Rp 30000</p>
+<input type="number" id="q2" value="1">
+<button onclick="add('Kaktus',30000,'q2')">Beli</button>
+</div>
+
+<div class="produk">
+<img src="https://images.unsplash.com/photo-1606041008023-472dfb5e530f">
+<h3>Lidah Mertua</h3>
+<p>Penyerap polusi.</p>
+<p>Rp 50000</p>
+<input type="number" id="q3" value="1">
+<button onclick="add('Lidah Mertua',50000,'q3')">Beli</button>
+</div>
+
+<div class="produk">
+<img src="https://images.unsplash.com/photo-1616627981456-5b6e1f9c8f60">
+<h3>Aglaonema</h3>
+<p>Warna cantik.</p>
+<p>Rp 90000</p>
+<input type="number" id="q4" value="1">
+<button onclick="add('Aglaonema',90000,'q4')">Beli</button>
+</div>
+
+<div class="produk">
+<img src="https://images.unsplash.com/photo-1598887142487-4a2b3d0c3b77">
+<h3>Philodendron</h3>
+<p>Indoor populer.</p>
+<p>Rp 70000</p>
+<input type="number" id="q5" value="1">
+<button onclick="add('Philodendron',70000,'q5')">Beli</button>
+</div>
+
+<a href="keranjang.html">Lihat Keranjang</a>
+</section>
+
+<script>
+function add(nama,harga,id){
+let qty = document.getElementById(id).value;
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+cart.push({nama,harga,qty:parseInt(qty)});
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert("Ditambahkan!");
+}
+</script>
+
+</body>
+</html>
